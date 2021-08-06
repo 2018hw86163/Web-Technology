@@ -1,0 +1,145 @@
+<html>
+	<head>
+		<script>
+			function Contactme() {
+				var name =
+					document.forms["contactForm"]["Name"];
+				var email =
+					document.forms["contactForm"]["EMail"];
+				var phone =
+					document.forms["contactForm"]["Telephone"];
+				var Comment =
+					document.forms["contactForm"]["comment"];
+			
+				var address =
+					document.forms["contactForm"]["Address"];
+
+				if (name.value == "") {
+					window.alert("Please enter your name.");
+					name.focus();
+					return false;
+				}
+
+				if (address.value == "") {
+					window.alert("Please enter your address.");
+					address.focus();
+					return false;
+				}
+
+				if (email.value == "") {
+					window.alert(
+					"Please enter a valid e-mail address.");
+					email.focus();
+					return false;
+				}
+
+				if (phone.value == "") {
+					window.alert(
+					"Please enter your telephone number.");
+					phone.focus();
+					return false;
+				}
+
+		
+
+				if (comment.value == "") {
+					window.alert("Please enter your comment");
+					comment.focus();
+					return false;
+				}
+
+				return true;
+			}
+		</script>
+
+		<style>
+			div {
+				box-sizing: border-box;
+				width: 100%;
+				border: 100px solid black;
+				float: left;
+				align-content: center;
+				align-items: center;
+			}
+
+			form {
+				margin: 0 auto;
+				width: 600px;
+			}
+body {margin:0;}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  top: 0;
+  width: 100%;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+		</style>
+	</head>
+
+	<body>
+	<ul>
+  <li><a class="active" href="index.html">Home</a></li>
+  <li><a  href="contact.html">Contact</a></li>
+</ul>
+		<h1 style="text-align: center;">contact Form</h1>
+		<form name="contactForm" action="/submit.php"
+			onsubmit="return Contactme()" method="post">
+			<p>Name: <input type="text"
+							size="65" name="Name" /></p>
+			<br />
+			<p>Address: <input type="text"
+							size="65" name="Address" />
+		</p>
+			<br />
+			<p>E-mail Address: <input type="text"
+							size="65" name="EMail" /></p>
+			
+			<br />
+			<p>Telephone: <input type="text"
+						size="65" name="Telephone" /></p>
+			<br />
+
+			<p>
+				<p>Comment: <input type="text"
+						size="65" name="comment" /></p>
+
+			</p>
+
+			<br />
+
+			<br />
+
+			<p>Messege: <textarea cols="55"
+							name="messege"> </textarea></p>
+			<p>
+				<input type="submit"
+					value="send" name="Submit" />
+				<input type="reset"
+					value="Reset" name="Reset" />
+			</p>
+		</form>
+	</body>
+</html>
